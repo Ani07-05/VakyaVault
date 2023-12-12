@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="createNote-style.css">
+    <title>Create Note</title>
+</head>
+<body>
+    <div id="noteContainer" class="note-container" contenteditable="true" placeholder="Start typing"></div>
+    <button id="saveNoteButton">Save Note</button>
+    <button id="downloadPDFButton">Download as PDF</button>
+    <button id="downloadDOCXButton">Download as DOCX</button>
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script src="storageLogic.js" defer></script>
+    <script src="createNote-script.js" defer></script>
+</body>
+</html>
