@@ -1,0 +1,31 @@
+/* savedNotes-style.css */
+
+body {
+    background-color: #1a1a1a;
+    
+}
+
+.saved-notes-container {
+   
+   
+  
+    color: #fff;
+    font-family: 'Notion', sans-serif;
+    white-space: pre-wrap; /* Preserve newline characters */
+}
+
+#clearNotesButton {
+    background-color: #e74c3c; /* Red color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* Adjust as needed */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#clearNotesButton:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}

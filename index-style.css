@@ -1,0 +1,52 @@
+/* index-style.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff; /* White text color */
+    background: url('bp.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensures the background image covers the entire container */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.btn {
+    background-color: #61dafb;
+    color: #282c34;
+    font-size: 24px; /* Increased button font size */
+    padding: 15px 30px; /* Increased button padding */
+    margin: 15px; /* Increased button margin */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold; /* Bolder button text */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #282c34;
+    color: #61dafb;
+}
+
+/* Animation for the welcome text */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.welcome-text {
+    font-size: 36px; /* Increased welcome text font size */
+    margin-top: 30px; /* Increased welcome text margin */
+    font-weight: bold; /* Bolder welcome text */
+    animation: fadeIn 1s ease-out;
+}
