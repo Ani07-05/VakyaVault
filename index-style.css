@@ -2,10 +2,25 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    color: #ffffff; /* White text color */
-    background: url('bp.jpg') no-repeat center center fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Professional font for note-taking apps */
+    color: #fff; /* White text color */
+    background: 
+        /* Updated background image */
+        url('BG3.png') no-repeat center center fixed;
     background-size: cover; /* Ensures the background image covers the entire container */
+    animation: slideBackground 30s linear infinite; /* Animation for background image */
+}
+
+@keyframes slideBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container {
@@ -14,39 +29,103 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    position: relative; /* Position relative for absolute positioning of the overlay */
+    z-index: 1; /* Ensure overlay is above the background image */
+    animation: fadeIn 2s ease-in-out forwards; /* Smooth fade-in animation for the container */
+}
+
+.overlay {
+    position: absolute; /* Position absolute for overlay */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center alignment */
+    padding: 20px; /* Added padding */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background color with opacity */
+    border-radius: 20px; /* Rounded corners */
+    z-index: 2; /* Ensure overlay is above other elements */
+}
+
+.card {
+    max-width: 600px; /* Max width of the card */
+    width: 80%; /* Adjust width for responsiveness */
+    padding: 20px; /* Added padding */
+    background-color: transparent; /* Transparent background color */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow effect */
+    color: #fff; /* White text color */
+    text-align: center;
+    margin-bottom: 20px; /* Reduced margin bottom */
+    font-size: 72px; /* Increased welcome text font size */
+    font-weight: bold; /* Bolder welcome text */
+    animation: slideInFromTop 1.5s ease-out forwards; /* Animation for title */
+}
+
+.img-container img {
+    max-width: 100%; /* Ensure image doesn't exceed container */
+    animation: fadeInImg 2s ease-in-out forwards; /* Smooth fade-in animation for the image */
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Added margin-top to bring the buttons up */
 }
 
 .btn {
-    background-color: #61dafb;
-    color: #282c34;
+    background-color: transparent; /* Transparent button background */
+    color: #fff; /* White button text color */
     font-size: 24px; /* Increased button font size */
     padding: 15px 30px; /* Increased button padding */
     margin: 15px; /* Increased button margin */
-    border: none;
-    border-radius: 8px;
+    border: 2px solid #fff; /* White button border */
+    border-radius: 30px; /* Full rounded curve box */
     cursor: pointer;
     font-weight: bold; /* Bolder button text */
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth button transition */
+    animation: fadeInBtn 2s ease-in-out forwards; /* Smooth fade-in animation for the buttons */
 }
 
-.btn:hover {
-    background-color: #282c34;
-    color: #61dafb;
-}
-
-/* Animation for the welcome text */
 @keyframes fadeIn {
-    from {
+    0% {
         opacity: 0;
     }
-    to {
+    100% {
         opacity: 1;
     }
 }
 
-.welcome-text {
-    font-size: 36px; /* Increased welcome text font size */
-    margin-top: 30px; /* Increased welcome text margin */
-    font-weight: bold; /* Bolder welcome text */
-    animation: fadeIn 1s ease-out;
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInImg {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInBtn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.btn:hover {
+    background-color: #fff; /* White background on hover */
+    color: #111; /* Dark gray text color on hover */
+    border-color: #fff; /* White border color on hover */
 }
