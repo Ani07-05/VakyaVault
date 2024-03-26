@@ -1,4 +1,10 @@
 /* createNote-style.css */
+/* Add this CSS to hide the heading options dropdown by default */
+.hidden {
+    display: none;
+}
+
+
 body {
     margin: 0;
     padding: 0;
@@ -6,6 +12,57 @@ body {
     background-color: #1a1a1a;
 }
 
+/* Navigation bar styles */
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover, .dropdown:hover .dropbtn {
+    background-color: #555;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Container styles */
 .note-container {
     background-color: black;
     padding: 20px;
@@ -22,6 +79,7 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
+    display: flex; /* Make buttons align horizontally */
 }
 
 .button-container button {
@@ -38,4 +96,39 @@ body {
 
 .button-container button:hover {
     background-color: #2c3e50;
+}
+
+/* Add this to your CSS to style the corner resizers */
+.corner {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border: 1px solid black;
+    cursor: nwse-resize;
+}
+
+.top-left {
+    top: -5px;
+    left: -5px;
+}
+
+.top-right {
+    top: -5px;
+    right: -5px;
+}
+
+.bottom-left {
+    bottom: -5px;
+    left: -5px;
+}
+
+.bottom-right {
+    bottom: -5px;
+    right: -5px;
+}
+
+/* Hide the scaler by default */
+.scaler {
+    display: none;
 }
