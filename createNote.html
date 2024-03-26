@@ -1,22 +1,43 @@
-<!-- createNote.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="createNote-style.css">
+    <script src="imageHandler.js" defer></script>
+
     <title>Create Note</title>
 </head>
 <body>
+    <nav>
+        <ul class="navbar">
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Media</a>
+                <div class="dropdown-content">
+                    <a href="#" id="imageOption">Image</a>
+                    <a href="#" id="videoOption">Video</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Scaler and corners for image resizing -->
+    <div id="scaler" class="scaler">
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+    </div>
+
     <div id="noteContainer" class="note-container" contenteditable="true" placeholder="Start typing"></div>
     <div id="buttonContainer" class="button-container">
         <button id="saveNoteButton">Save Note</button>
-        <button id="downloadPDFButton">Download as PDF</button>
-            
+        <button id="downloadPDFButton">Download as PDF</button>           
     </div>
+
     <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
     <script src="storageLogic.js" defer></script>
     <script src="createNote-script.js" defer></script>
+    <script src="navBar.js" defer></script>
 </body>
 </html>
-
